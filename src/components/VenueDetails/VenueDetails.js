@@ -14,7 +14,7 @@ const ParkingText = () => {
       </div>
       <br/>
       <div>
-        <a target="_blank" href={"https://www.google.com/maps?daddr=address"}>Get Directions</a>
+        <a target="_blank" href={"https://www.google.com/maps?daddr=Milton+Park+Country+House+Hotel+%26+Spa,+Horderns+Road,+Bowral+NSW"}>Get Directions</a>
       </div>
     </React.Fragment>
   );
