@@ -32,7 +32,7 @@ class MonetaryForm extends React.Component {
                 </div>
                 <br/>
                 <small>
-                  If you use bank transfer, you can send money to our PayID 0432546747 or Paypal
+                  If you use bank transfer, you can send money to PayID 0432546747 or via Paypal
                 </small>
               </div>
               <div className="modal-footer">

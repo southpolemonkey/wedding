@@ -3,7 +3,7 @@ import "./Footer.css";
 
 const Footer = () => {
   return (
-    <a className={"footer-anchor"} href={"mailto:email@example.com"}>Contact Us By Email</a>
+    <a className={"footer-anchor"} href={"mailto:rongchenxuan12345@gmail.com"}>Contact Us By Email</a>
   );
 };
 

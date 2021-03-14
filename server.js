@@ -36,7 +36,7 @@ function ObjectId() {
 } //Remove this code to use project
 
 let MongoClient = mongo.MongoClient;
-let database = null;
+let database = "wedding_gift";
 
 //app.use(sslRedirect()); //If using heroku, use this to make the server https only
 
@@ -46,19 +46,19 @@ let database = null;
 //Remove this code if you wish to use this project
 */
 
-MongoClient.connect(MONGODB_URI, { reconnectTries: 120, reconnectInterval: 2000 })
-.then(function(_database) { // <- db as first argument
-  console.log("Database connection ready");
-  database = _database;
-  let server = require("http").createServer(app);
-  server.listen(PORT, function() {
-    console.log("HTTP Server up and listening on " + PORT);
-  });
-})
-.catch(function(err) {
-  console.error(err);
-  process.exit(1);
-});
+// MongoClient.connect(MONGODB_URI, { reconnectTries: 120, reconnectInterval: 2000 })
+// .then(function(_database) { // <- db as first argument
+//   console.log("Database connection ready");
+//   database = _database;
+//   let server = require("http").createServer(app);
+//   server.listen(PORT, function() {
+//     console.log("HTTP Server up and listening on " + PORT);
+//   });
+// })
+// .catch(function(err) {
+//   console.error(err);
+//   process.exit(1);
+// });
 
 
 let server = require("http").createServer(app);
