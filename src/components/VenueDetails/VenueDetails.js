@@ -28,7 +28,7 @@ const VenueDetails = (props) => {
             <div className={"col-12 px-3 col-md-6 d-flex align-items-center justify-content-center text-center"}>
               <div>
                 <div className={"venue-details-container-header mb-4"}>
-                  Anthony Memorial Church
+                  Milton Park Country House Hotel
                 </div>
                 <div className={"d-none d-md-block venue-details-body-text"}>
                   <ParkingText/>
@@ -36,7 +36,7 @@ const VenueDetails = (props) => {
               </div>
             </div>
             <div className={"venue-details-image-wrapper col-12 col-md-6"}>
-              <img alt={"Anthony Memorial Church"} src={"/church.jpg"} className={"venue-details-image img-fluid"}/>
+              <img alt={"Milton Park Hotel Map"} src={"/parking.png"} className={"venue-details-image img-fluid"}/>
             </div>
           </div>
         <div className={"row d-md-none my-5"}>
