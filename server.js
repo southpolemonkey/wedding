@@ -1,19 +1,11 @@
 require("dotenv").config();
 
 const PORT = process.env.PORT || process.env.NODE_PORT || 8080;
-const ITEMS_COLLECTION = "items";
-
-const {
-  MONGO_USERNAME,
-  MONGO_PASSWORD,
-  MONGO_HOSTNAME,
-  MONGO_PORT,
-  MONGO_DB
-} = process.env;
+const ITEMS_COLLECTION = "gifts";
 
 // const MONGODB_URI = process.env.PROD_MONGODB || process.env.MONGODB_URI; 
 
-const MONGODB_URI = `mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@${MONGO_HOSTNAME}:${MONGO_PORT}/${MONGO_DB}?authSource=admin`;
+const MONGODB_URI = `mongodb://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@${process.env.MONGO_HOSTNAME}:${process.env.MONGO_PORT}/${process.env.MONGO_DB}?authSource=admin`;
 
 const options = {
   useNewUrlParser: true,
@@ -29,11 +21,13 @@ let express = require("express");
 let app = express();
 let path = require("path");
 let bodyParser = require("body-parser");
+
 let mongo = require("mongodb");
-// const ObjectId = mongo.ObjectId;
-function ObjectId() {
-  return 12345;
-} //Remove this code to use project
+const ObjectId = mongo.ObjectId;
+
+// function ObjectId() {
+//   return 12345;
+// } //Remove this code to use project
 
 let MongoClient = mongo.MongoClient;
 let database = "wedding_gift";
@@ -46,25 +40,25 @@ let database = "wedding_gift";
 //Remove this code if you wish to use this project
 */
 
-// MongoClient.connect(MONGODB_URI, { reconnectTries: 120, reconnectInterval: 2000 })
-// .then(function(_database) { // <- db as first argument
-//   console.log("Database connection ready");
-//   database = _database;
-//   let server = require("http").createServer(app);
-//   server.listen(PORT, function() {
-//     console.log("HTTP Server up and listening on " + PORT);
-//   });
-// })
-// .catch(function(err) {
-//   console.error(err);
-//   process.exit(1);
-// });
-
-
-let server = require("http").createServer(app);
-server.listen(PORT, function() {
-  console.log("HTTP Server up and listening on " + PORT);
+MongoClient.connect(MONGODB_URI, { useUnifiedTopology: true})
+.then(function(_database) { // <- db as first argument
+  console.log("Database connection ready");
+  database = _database;
+  let server = require("http").createServer(app);
+  server.listen(PORT, function() {
+    console.log("HTTP Server up and listening on " + PORT);
+  });
+})
+.catch(function(err) {
+  console.error(err);
+  process.exit(1);
 });
+
+
+// let server = require("http").createServer(app);
+// server.listen(PORT, function() {
+//   console.log("HTTP Server up and listening on " + PORT);
+// });
 
 function setNoCache(res) {
   try {
@@ -101,8 +95,8 @@ app.get("/api/items", (req, res) => {
   //This code is for the website which remains live to demo the project - no user changes can be made
   //This code makes it appear as if it was a successful request
   //Remove this code if you wish to use this project
-  res.status(200).send(mockItems);
-  return;
+  // res.status(200).send(mockItems);
+  // return;
 
   console.log("----GET items---- at " + Date.now());
   setNoCache(res);
@@ -157,12 +151,12 @@ app.post("/api/reserve/:id", (req, res) => {
   //This code is for the website which remains live to demo the project - no user changes can be made
   //This code makes it appear as if it was a successful request
   //Remove this code if you wish to use this project
-  res.status(200).send({
-    success: true,
-    message:
-      "You have reserved this gift. You can undo this by clicking the 'Cancel Reservation' button beneath the item.",
-  });
-  return;
+  // res.status(200).send({
+  //   success: true,
+  //   message:
+  //     "You have reserved this gift. You can undo this by clicking the 'Cancel Reservation' button beneath the item.",
+  // });
+  // return;
 
   console.log("----POST to reserve---- at " + Date.now());
   setNoCache(res);
@@ -287,12 +281,12 @@ app.post("/api/cancel-reservation/:id", (req, res) => {
   //This code is for the website which remains live to demo the project - no user changes can be made
   //This code makes it appear as if it was a successful request
   //Remove this code if you wish to use this project
-  res.status(200).send({
-    success: true,
-    message:
-      "You have reserved this gift. You can undo this by clicking the 'Cancel Reservation' button beneath the item.",
-  });
-  return;
+  // res.status(200).send({
+  //   success: true,
+  //   message:
+  //     "You have reserved this gift. You can undo this by clicking the 'Cancel Reservation' button beneath the item.",
+  // });
+  // return;
 
   console.log("----POST to cancel-reservation---- at " + Date.now());
   setNoCache(res);
