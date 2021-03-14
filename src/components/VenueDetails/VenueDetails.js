@@ -6,11 +6,11 @@ const ParkingText = () => {
   return (
     <React.Fragment>
       <div>
-        There is parking available along Small Street and Long Street, as well as a parking area off Long Street.
+        The drive way will lead you to the hotel receiption where you can offload your passengers and the pathway will direct you to the Ceremony. 
       </div>
       <br/>
       <div>
-        Please leave parking within the church grounds to the wedding party.
+        Please parking in the parking lots and walk back to the receiption and follow the path under the canopy to the Tulip Lawn.
       </div>
       <br/>
       <div>

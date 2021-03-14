@@ -22,7 +22,7 @@ const Description = (props) => {
             With love,
           </div>
           <div>
-            Jack and Jill
+            Mingzhu and Chenxuan
           </div>
         </div>
       </div>

@@ -171,14 +171,14 @@ class ItemGrid extends React.Component {
               />);
             })
           }
-          <Item
+          {/* <Item
             key={"monetarygiftend"}
             monetaryGift={true}
             title={"Monetary Gift"}
             imageUrl={"/monetary-gift.png"}
             _id={"monetarygift"}
             available={true}
-          />
+          /> */}
         </React.Fragment>
         }
       </div>

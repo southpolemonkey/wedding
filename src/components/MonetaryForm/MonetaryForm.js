@@ -20,7 +20,7 @@ class MonetaryForm extends React.Component {
           <div className="modal-dialog" role="document">
             <div className="modal-content">
               <div className="modal-header">
-                <h5 className="modal-title">Give A Monetary Gift (PayPal)</h5>
+                <h5 className="modal-title">Give A Monetary Gift</h5>
                 <button type="button" className="close" onClick={this.closePopup} aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -28,18 +28,17 @@ class MonetaryForm extends React.Component {
 
               <div className="modal-body">
                 <div>
-                  There will be a wishing well on the day if you would prefer not to give online or cannot use PayPal.
+                  There will be a wishing well on the day if you would prefer not to give online.
                 </div>
                 <br/>
                 <small>
-                  If you use your bank account or PayPal balance to pay, there is no fee. If you use your credit or
-                  debit card, the fee is 2.4% + $0.30.
+                  If you use bank transfer, you can send money to our PayID 0432546747 or Paypal
                 </small>
               </div>
               <div className="modal-footer">
                 {/*Put in paypal user ID*/}
-                <a target={"__blank"} href={"https://paypal.me/"} onClick={this.closePopup}
-                   className="btn btn-primary">Continue to PayPal</a>
+                <a target={"__blank"} href={"https://paypal.me/chenxuanmingzhu"} onClick={this.closePopup}
+                   className="btn btn-primary">Continue to Alipay</a>
               </div>
             </div>
           </div>

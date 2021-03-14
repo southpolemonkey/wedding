@@ -35,7 +35,7 @@ class Header extends React.Component {
             <RemindMeForm closePopup={this.closePopup}/>
           </div>
         </div>
-        <h1 className={"header-heading"}>Jack & Jill's Wedding</h1>
+        <h1 className={"header-heading"}>Mingzhu & Chenxuan's Wedding</h1>
       </div>
     );
   }
