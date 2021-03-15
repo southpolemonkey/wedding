@@ -1,6 +1,7 @@
 require("dotenv").config();
 
 const PORT = process.env.PORT || process.env.NODE_PORT || 8080;
+console.log([PORT])
 const ITEMS_COLLECTION = "gifts";
 
 // const MONGODB_URI = process.env.PROD_MONGODB || process.env.MONGODB_URI; 
@@ -100,8 +101,9 @@ app.get("/api/items", (req, res) => {
 
   console.log("----GET items---- at " + Date.now());
   setNoCache(res);
-
-  database
+  
+  try {
+    database
     .db()
     .collection(ITEMS_COLLECTION)
     .find({})
@@ -144,7 +146,12 @@ app.get("/api/items", (req, res) => {
           return;
         }
       }
-    });
+    }); 
+  } catch (error) {
+    console.log(error)
+    return error;
+  }
+  
 });
 
 app.post("/api/reserve/:id", (req, res) => {
