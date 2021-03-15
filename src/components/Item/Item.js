@@ -33,9 +33,11 @@ class Item extends React.Component {
       <React.Fragment>
       <div className={"m-auto m-md-0 col-12 col-sm-8 col-md-6 col-lg-4 col-xl-3 item-card-container" + (!this.props.available ? " item-unavailable" : "")}>
        <div className="card item-card">
-          <a href={this.props.link} target="_blank" rel="noopener noreferrer">
-            <img className="card-img-top item-image" rel="noreferrer" src={this.props.imageUrl} alt={"Image for " + this.props.title}/>
-          </a>
+          <div className="card-image text-center">
+            <a href={this.props.link} target="_blank" rel="noopener noreferrer">
+              <img className="card-img-top item-image" rel="noreferrer" src={this.props.imageUrl} alt={"Image for " + this.props.title}/>
+            </a>
+          </div>
           <div className="card-body text-center">
             <h5 className="card-title item-title">{this.props.title}</h5>
             <h6 className="card-title font-italic text-primary">{!this.props.available ? "Already Reserved" : ""}</h6>
