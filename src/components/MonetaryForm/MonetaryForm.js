@@ -38,7 +38,7 @@ class MonetaryForm extends React.Component {
               <div className="modal-footer">
                 {/*Put in paypal user ID*/}
                 <a target={"__blank"} href={"https://paypal.me/chenxuanmingzhu"} onClick={this.closePopup}
-                   className="btn btn-primary">Continue to Alipay</a>
+                   className="btn btn-primary">Continue to Paypal</a>
               </div>
             </div>
           </div>
