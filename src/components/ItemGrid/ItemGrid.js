@@ -164,6 +164,7 @@ class ItemGrid extends React.Component {
                 key={itemData._id}
                 title={itemData.title}
                 imageUrl={itemData.imageUrl}
+                link={itemData.link}
                 _id={itemData._id}
                 available={itemData.available}
                 fetchItems={this.fetchItems}
@@ -171,14 +172,6 @@ class ItemGrid extends React.Component {
               />);
             })
           }
-          {/* <Item
-            key={"monetarygiftend"}
-            monetaryGift={true}
-            title={"Monetary Gift"}
-            imageUrl={"/monetary-gift.png"}
-            _id={"monetarygift"}
-            available={true}
-          /> */}
         </React.Fragment>
         }
       </div>

@@ -81,6 +81,11 @@ function handleError(res, reason, messageForUser, code) {
     });
 }
 
+function sendEmail(res, receipt) {
+  console.log("Send email to", receipt)
+  
+}
+
 app.use(bodyParser.json());
 
 // build directory the root
@@ -123,6 +128,7 @@ app.get("/api/items", (req, res) => {
               available: item.available,
               title: item.title,
               imageUrl: item.imageUrl,
+              link: item.link,
               _id: item._id,
             };
             if (item.available) {
