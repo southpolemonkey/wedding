@@ -15,8 +15,6 @@ const options = {
   connectTimeoutMS: 10000,
 };
 
-const mockItems = require("./mockItems.js").mockItems;
-
 //let sslRedirect = require('heroku-ssl-redirect'); //If using heroku, use this to make the server https only
 let express = require("express");
 let app = express();
