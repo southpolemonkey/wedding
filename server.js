@@ -270,8 +270,7 @@ app.post("/api/reserve/:id", (req, res) => {
                   res.status(200).send({
                     success: true,
                     message:
-                      "You have reserved this gift. \n If you'd like to choose delivery, \
-                      our address is Unit 9, 7 Silver Street, Randwick, NSW, 2031 \n contact Chenxuan Rong (0432546747)",
+                      "You have reserved this gift. You can undo this by clicking the 'Cancel Reservation' button beneath the item."
                   });
                 } else {
                   handleError(
