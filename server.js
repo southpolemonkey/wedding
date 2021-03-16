@@ -20,6 +20,7 @@ let express = require("express");
 let app = express();
 let path = require("path");
 let bodyParser = require("body-parser");
+let mailer = require('./mail');
 
 let mongo = require("mongodb");
 const ObjectId = mongo.ObjectId;
@@ -159,9 +160,7 @@ app.get("/api/items", (req, res) => {
 });
 
 app.post("/api/reserve/:id", (req, res) => {
-  //This code is for the website which remains live to demo the project - no user changes can be made
-  //This code makes it appear as if it was a successful request
-  //Remove this code if you wish to use this project
+
   // res.status(200).send({
   //   success: true,
   //   message:
@@ -271,7 +270,8 @@ app.post("/api/reserve/:id", (req, res) => {
                   res.status(200).send({
                     success: true,
                     message:
-                      "You have reserved this gift. You can undo this by clicking the 'Cancel Reservation' button beneath the item.",
+                      "You have reserved this gift. \n If you'd like to choose delivery, \
+                      our address is Unit 9, 7 Silver Street, Randwick, NSW, 2031 \n contact Chenxuan Rong (0432546747)",
                   });
                 } else {
                   handleError(
@@ -284,6 +284,21 @@ app.post("/api/reserve/:id", (req, res) => {
               }
             }
           );
+
+        const email_content = {
+            "to": data.email,
+            "subject": "Thanks for your gift!",
+            "text": "",
+            "html": `
+              <p>Hi, Thanks for reserving the gift for us! We appreciate your love to us.</p>
+              <p>If you'd like to delivery to us, here is our address</p>
+              <p>Unit 9, 7 Silver Street, Randwick, NSW, 2031</p>
+              <p>Chenxuan Rong </p>
+            `
+        };
+        
+        mailer(email_content)
+        
       }
     );
 });
