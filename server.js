@@ -289,10 +289,11 @@ app.post("/api/reserve/:id", (req, res) => {
             "subject": "Thanks for your gift!",
             "text": "",
             "html": `
-              <p>Hi, Thanks for reserving the gift for us! We appreciate your love to us.</p>
+              <p>Hi, ${data.name} Thanks for reserving the gift for us! We appreciate your love to us.</p>
               <p>If you'd like to delivery to us, here is our address</p>
               <p>Unit 9, 7 Silver Street, Randwick, NSW, 2031</p>
               <p>Chenxuan Rong </p>
+              <p>0432546747 </p>
             `
         };
         
